@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:8080'); // 创建本地socket连接
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+
+</body>
+</html>
